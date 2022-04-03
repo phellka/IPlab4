@@ -1,6 +1,7 @@
 package com.example.demo.Qualification.controller;
 
 import com.example.demo.Qualification.model.Collector;
+import com.example.demo.WebConfiguration;
 import org.springframework.web.bind.annotation.*;
 import com.example.demo.Qualification.service.QualificationService;
 
@@ -8,7 +9,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/collector")
+@RequestMapping(WebConfiguration.REST_API + "/collector")
 public class CollectorController {
     private final QualificationService qualificationService;
 
@@ -21,11 +22,11 @@ public class CollectorController {
         return qualificationService.findCollector(id);
     }
 
-    @GetMapping("/")
+    @GetMapping
     public List<Collector> getCollectors() {
         return qualificationService.findAllCollectors();
     }
-    @PostMapping("/")
+    @PostMapping
     public Collector createCollector(@RequestParam("experience") int experience,
                                      @RequestParam("name") String name,
                                      @RequestParam("qualificationId") long qualificationId) {

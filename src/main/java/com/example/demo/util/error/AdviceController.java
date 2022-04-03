@@ -8,10 +8,11 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import com.example.demo.Qualification.service.QualificationNotFoundException;
 import com.example.demo.util.validation.ValidationException;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.stream.Collectors;
 
-@ControllerAdvice
+@ControllerAdvice(annotations = RestController.class)
 public class AdviceController {
     @ExceptionHandler({
             QualificationNotFoundException.class,
