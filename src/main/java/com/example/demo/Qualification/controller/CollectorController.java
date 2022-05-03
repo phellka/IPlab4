@@ -1,9 +1,9 @@
 package com.example.demo.Qualification.controller;
 
 import com.example.demo.Qualification.model.Collector;
-import com.example.demo.WebConfiguration;
 import org.springframework.web.bind.annotation.*;
 import com.example.demo.Qualification.service.QualificationService;
+import com.example.demo.configuration.WebConfiguration;
 
 import java.util.List;
 
